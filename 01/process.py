@@ -5,6 +5,8 @@ def process(args):
   """pull in the file, and look at the first line for numbers"""
   inf = open(args[1],'r')
   
+  delta = 1
+
   p = None
   cur = 0
   tot = 0
@@ -19,12 +21,14 @@ def process(args):
   inf.close()
   inf = None
 
+  if (len(args) > 2):
+    delta = int(len(lst) / 2)
+
   x=0
   while x < len(lst):
-    if (x == (len(lst) -1)):
-      cnt = 0
-    else:
-      cnt = x + 1
+    cnt = x + delta
+    if cnt > (len(lst) -1):
+      cnt = cnt - len(lst)
     
     cur = lst[x]
     p = lst[cnt]
