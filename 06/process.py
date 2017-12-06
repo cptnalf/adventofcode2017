@@ -4,18 +4,33 @@ import sys
 def process(infile):
   prevs = []
   cycle = 0
+  infc = 0
+  cycleseen = False
+
   lst = slurp(infile)
   while True:
     prevs.append(lst)
     print(lst)
     
     newlst = level_lst(lst)
-    cycle += 1
+    cycle +=1
+
     if newlst in prevs:
       break
     lst = newlst
   
   print("{0:d} cycles for :{1}".format(cycle, newlst))
+
+  targetlst = newlst
+  lst = newlst
+  while True:
+    newlst = level_lst(lst)
+    infc += 1 
+    if newlst == targetlst:
+      break
+    lst = newlst
+  print("{0:d} cycles for again.".format(infc))
+
 
 def slurp(fname):
   lst = []
