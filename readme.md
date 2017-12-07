@@ -10,3 +10,4 @@ The days thus far:
 1. [Day 4: High-Entropy Passphrases](http://adventofcode.com/2017/day/4) (04/)
 1. [Day 5: A Maze of Twisty Trampolines, All Alike](http://adventofcode.com/2017/day/5) (05/)
 1. [Day 6: Memory Reallocation](http://adventofcode.com/2017/day/6) (06/)
+1. [Day 7: Recursive Circus](http://adventofcode.com/2017/day/7) (07/)
