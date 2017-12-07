@@ -14,6 +14,24 @@ class Node:
   
   def add(self,n):
     self.children.append(n)
+  
+  def printWeight(self):
+    tot = self.weight
+    cw = list()
+    ct = None
+    doprint = False
+    for c in self.children:
+      w = c.printWeight()
+      if ct is None:
+        ct = w
+      if w != ct:
+        doprint = True
+      cw.append((c.name, w))
+    
+    tot = sum([x[1] for x in cw] ,tot)
+    if doprint:
+      print("{0}".format(cw))
+    return tot
 
   def __str__(self):
     lst = [x.name for x in self.children]
@@ -59,6 +77,7 @@ def process(filename):
       root = n
   
   print("root: {0}".format(root))
+  root.printWeight()
 
 def assemble(node):
   """finds the direct children of the supplied node"""
@@ -74,7 +93,7 @@ def assemble(node):
       node.add(newnode)
       #print("{0} => {1} {2}".format(node.name, ch, node.children))
   
-  print(node)
+  #print(node)
 
 def parse_line(line):
   """ parse one line of the input file.
