@@ -54,6 +54,7 @@ def process(filename):
     ,'<': lambda x,y: x < y
   }
 
+  m = None
   for i in instrs:
     initRegs(regs, i.name)
     initRegs(regs, i.cmpreg)
@@ -64,8 +65,14 @@ def process(filename):
         regs[i.name] += i.amt
     else:
       print("{0} {1}".format(i.name, i.cmp))
-
+    
+    for r in regs:
+      if m is None or m < regs[r]:
+        m = regs[r]
+    
   print(regs)
+  print("max during process " + str(m))
+  
   m = None
   for r in regs:
     if m is None or m < regs[r]:
