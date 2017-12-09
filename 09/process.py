@@ -10,6 +10,7 @@ def process(fname):
   gstart = False
   score = 0
   tot = 0
+  garbage = 0
   for c in data:
     if esc:
       esc = False
@@ -22,6 +23,8 @@ def process(fname):
     if gstart:
       if c == '>':
         gstart = False
+      else:
+        garbage += 1
       continue
           
     if c == '<':
@@ -38,6 +41,7 @@ def process(fname):
     print(c,end='')
   
   print("tot = {0} score={1}".format(tot, score))
+  print("garbage chars: {0}".format(garbage))
 
 if __name__ == "__main__":
   process(sys.argv[1])
