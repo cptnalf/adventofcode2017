@@ -12,3 +12,4 @@ The days thus far:
 1. [Day 6: Memory Reallocation](http://adventofcode.com/2017/day/6) - [solution](06/)
 1. [Day 7: Recursive Circus](http://adventofcode.com/2017/day/7) - [solution](07/)
 1. [Day 8: I Heard You Like Registers](http://adventofcode.com/2017/day/8) - [solution](08/)
+1. [Day 9: Stream Processing](http://adventofcode.com/2017/day/9) - [solution](09/)
