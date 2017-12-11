@@ -14,3 +14,4 @@ The days thus far:
 1. [Day 8: I Heard You Like Registers](http://adventofcode.com/2017/day/8) - [solution](08/)
 1. [Day 9: Stream Processing](http://adventofcode.com/2017/day/9) - [solution](09/)
 1. [Day 10: Knot Hash](http://adventofcode.com/2017/day/10) - [solution](10/)
+1. [Day 11: Hex Ed](http://adventofcode.com/2017/day/11) - [solution](11/)
