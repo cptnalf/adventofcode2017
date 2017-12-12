@@ -44,15 +44,27 @@ def process(fname):
   cnt = printTree(root, nodeDic)
   print("links: " + str(cnt))
 
+  groups = 1
+  while len(nodeDic) > 0:
+    cnt = printTree(None,nodeDic)
+    groups += 1
+  print("groups: " + str(groups))
+
 def printTree(node, nodeDic):
   q = list()
   visited = list()
   n = 0
 
+  if node is None:
+    node = next(iter(nodeDic.values()))
+  
   while node is not None:
     n += 1
-    print(node.name)
+    #print(node.name)
     visited.append(node.name)
+    if node.name in nodeDic:
+      nodeDic.pop(node.name)
+    
     for x in node.links:
       if x.name not in visited:
         q.append(x)
