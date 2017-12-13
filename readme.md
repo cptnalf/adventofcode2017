@@ -16,3 +16,4 @@ The days thus far:
 1. [Day 10: Knot Hash](http://adventofcode.com/2017/day/10) - [solution](10/)
 1. [Day 11: Hex Ed](http://adventofcode.com/2017/day/11) - [solution](11/)
 1. [Day 12: Digital Plumber](http://adventofcode.com/2017/day/12) - [solution](12/)
+1. [Day 13: Packet Scanners](http://adventofcode.com/2017/day/13) - [solution](13/)
