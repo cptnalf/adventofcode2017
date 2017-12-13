@@ -7,13 +7,19 @@ class Scanner:
     self.index = index
     self.length = length
     self.pos = 0
+    self.dir = 1
 
   def move(self):
-    self.pos += 1
-    if self.pos < self.length:
-      pass
-    else:
+    self.pos += self.dir
+    if self.pos < 0:
+      self.dir = 1
       self.pos = 0
+
+    if self.pos >= self.length:
+      self.dir = -1
+      self.pos = self.length -1
+    
+    self.pos 
 
 def process(fname):
   """
