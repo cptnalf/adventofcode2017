@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import sys
+import itertools
 
 class Scanner:
   def __init__(self, index, length):
@@ -40,8 +41,21 @@ def process(fname):
   score = sum(scores)
   print("alt: {0} = {1}".format(score, scores))
 
+  offset = 0
+  score = 1
+  while score > 0:
+    # this needs to take into account the zero position.
+    score = 1 if any(ss(scanners[pos].length, pos + offset) == 0 for pos in scanners ) else 0
+    offset += 1
+  
+  print(offset - 1)
+
+  offset = next(wait for wait in itertools.count() if not any(ss(scanners[pos].length, wait + pos) == 0 for pos in scanners))
+  print(offset)
 
 def ss(height, time):
+  """
+  """
   offset = time % ((height - 1) * 2)
   return 2 * (height -1) - offset if offset > height -1 else offset
 
