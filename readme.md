@@ -17,3 +17,4 @@ The days thus far:
 1. [Day 11: Hex Ed](http://adventofcode.com/2017/day/11) - [solution](11/)
 1. [Day 12: Digital Plumber](http://adventofcode.com/2017/day/12) - [solution](12/)
 1. [Day 13: Packet Scanners](http://adventofcode.com/2017/day/13) - [solution](13/)
+1. [Day 14: Disk Defragmentation](http://adventofcode.com/2017/day/14) - [solution](14/)
