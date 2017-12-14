@@ -85,7 +85,28 @@ class KnotHash:
       self.pos += x + self.step
       self.pos = self.pos % 256
       self.step += 1
-    
+
+seen = set()
+rows = list()
+
+def search(i,j):
+  """search the array for stuff close to the given coords."""
+  if (i,j) in seen:
+    return
+
+  if not rows[i][j]:
+    return
+  
+  seen.add((i,j))
+  if i > 0:
+    search(i -1, j)
+  if j > 0:
+    search(i,j -1)
+  if i < 127:
+    search(i + 1,j)
+  if j < 127:
+    search(i,j + 1)
+
 if __name__ == "__main__":
   kh = KnotHash()
 
@@ -93,22 +114,33 @@ if __name__ == "__main__":
   #kh.load('AoC 2017')
   #kh.run()
   #print(kh.gethex())
-  instr = 'flqrgnkx'
+  instr = 'uugsqrei'
+  #'uugsqrei'
+  #'flqrgnkx'
   used = 0
   for x in range(0,128):
     kh.reset()
     kh.load(instr + '-'+str(x))
     kh.run()
-    #print(kh.gethex())
-    kh.populateHex()
-    for x in kh.hexsrc:
-      l = ''
-      for b in format(x,'08b'):
-        #if b == '0':
-        #  l += '.'
-        if b == '1':
-          used += 1
-          #l += '#'
-      #print(l)
+    h = kh.gethex()
+    v = '{:0128b}'.format(int(h,16))
+    used += sum(map(int,v))
+    rows.append(list(map(int,v)))
   
   print(used)
+
+  used = 0
+  for x in range(0,128):
+    for y in range(0,128):
+      if (x,y) in seen:
+        continue
+
+      if rows[x][y]:
+        used += 1
+        search(x,y)
+  
+  print(used)
+
+
+
+
