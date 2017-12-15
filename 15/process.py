@@ -9,6 +9,10 @@ gb = lambda p: (p * gbm) % 2147483647
 judged = 0
 pa = 65
 pb = 8921
+
+pa = 883
+pb = 879
+
 x = 0
 while x < cnt:
   ra = ga(pa)
