@@ -19,3 +19,4 @@ The days thus far:
 1. [Day 13: Packet Scanners](http://adventofcode.com/2017/day/13) - [solution](13/)
 1. [Day 14: Disk Defragmentation](http://adventofcode.com/2017/day/14) - [solution](14/)
 1. [Day 15: Dueling Generators](http://adventofcode.com/2017/day/15) - [solution](15/)
+1. [Day 16: Permutation Promenade](http://adventofcode.com/2017/day/16) - [solution](16/)
