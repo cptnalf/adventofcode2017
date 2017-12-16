@@ -1,5 +1,14 @@
 #!/usr/bin/python
 
+# so, this implementation is pretty great, and probably going to need it in the next
+# few days
+# https://www.reddit.com/r/adventofcode/comments/7jxkiw/2017_day_15_solutions/dr9ytj3/
+def generator(prev, conmult, mod=1):
+  while True:
+    prev = prev * conmult % 2147483647
+    if prev % mod == 0:
+      yield prev % 0xffff
+
 part2 = True
 cnt = 40 * 1000 * 1000
 gam = 16807
