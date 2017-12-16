@@ -75,3 +75,28 @@ for x in locs:
   ans += x
 
 print(ans)
+
+olds = []
+#olds.append("abcdefghijklmnop")
+#olds.append(ans)
+cycle = -1
+locs = list('abcdefghijklmnop')
+reps = 1000000000
+# *sigh*... now 1billion more.
+for y in range(reps):
+  ans = ''.join(locs)
+  if ans in olds:
+    # we know what the next one is now.
+    #print("cycle at "+ str(y) + ' ' + ans)
+    #cycle = y
+    ans = olds[reps % y]
+    break
+
+  olds.append(ans)
+  for x in actions:
+    act = adic[x[0]]
+    act(x)
+  ans = ''.join(locs)
+  print(str(y) + "; " + ans)
+
+print(ans)
