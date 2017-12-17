@@ -12,7 +12,8 @@ buf = list()
 buf.append(0)
 
 newidx = 0
-stpcnt = 3
+stpcnt = 343
+# 343
 curidx = 0
 for x in range(1,2018):
   newidx = step(buf,stpcnt, curidx)
