@@ -21,3 +21,14 @@ for x in range(1,2018):
   curidx = newidx + 1
 
 print(buf)
+newidx = buf.index(0)
+print(newidx)
+
+vafterzero = 0
+curidx = 0
+for x in range(1,50000000 + 1):
+  curidx = (curidx + stpcnt) % x + 1
+  if curidx == 1:
+    vafterzero = x
+
+print(vafterzero)
