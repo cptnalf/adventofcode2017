@@ -22,3 +22,4 @@ The days thus far:
 1. [Day 16: Permutation Promenade](http://adventofcode.com/2017/day/16) - [solution](16/)
 1. [Day 17: Permutation Promenade](http://adventofcode.com/2017/day/17) - [solution](17/)
 1. [Day 18: Permutation Promenade](http://adventofcode.com/2017/day/18) - [solution](18/)
+1. [Day 19: A Series of Tubes](http://adventofcode.com/2017/day/19) - [solution](19/)
