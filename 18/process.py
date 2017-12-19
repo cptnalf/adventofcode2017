@@ -37,7 +37,7 @@ def ins_rcv(x):
 
 def ins_jump(x):
   global ptr
-  if regs.get(x[0], 0) > 0:
+  if getvalue(x[0]) > 0:
     ptr += getvalue(x[1])
   else:
     ptr += 1
