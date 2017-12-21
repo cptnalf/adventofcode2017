@@ -4,6 +4,7 @@
 # kinematics equation:
 # xn = xp + v*t + 1/2 * a * t^2
 
+from collections import defaultdict
 import re
 import sys
 
@@ -51,7 +52,10 @@ with open(sys.argv[1], 'r') as inf:
 
 x = 0
 done = False
-while x < 10000:
+particles2 = list(particles)
+cnt = len(particles2)
+isend = 0
+while x < 30000:
   smalls = None
   for p in particles:
     #d = sum(abs(p) for p in [particles[i][h] + velocities[i][h] + x * accels[i][h] for h in range(0,3)])
@@ -61,6 +65,22 @@ while x < 10000:
     if smalls is None or smalls[1] > d:
       smalls = (p,d)
     #smalls.sort(key=lambda e: e[0],reverse=True)
+
   print(str(x) + " smalls " + str(smalls[0]) + ', ' + str(smalls[1]))
+  lst = list(particles2)
+  idx = 0
+  cols = defaultdict(set)
+  for p in lst:
+    t = p.p[0], p.p[1], p.p[2]
+    cols[t].add(p)
+  
+  for pos, items in cols.items():
+    if len(items) > 1:
+      for item in items:
+        particles2.remove(item)
   x += 1
+
+print(isend)
+print(len(particles2))
+
 
